@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConvertActivity">
+
+    <TextView
+        android:id="@+id/convert_from"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:text="Convert From"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/convert_to"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:gravity="center"
+        android:text="Convert To"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:hint="select"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/convert_from"
+        app:layout_constraintStart_toStartOf="@+id/convert_from"
+        app:layout_constraintTop_toBottomOf="@+id/convert_from">
+
+        <AutoCompleteTextView
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:hint="select"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/convert_to"
+        app:layout_constraintStart_toStartOf="@+id/convert_to"
+        app:layout_constraintTop_toBottomOf="@+id/convert_to">
+
+        <AutoCompleteTextView
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            tools:layout_editor_absoluteX="213dp"
+            tools:layout_editor_absoluteY="15dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/amountToConvertTxt"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:text="Amount to Convert"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/convertedAmountTxt"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:text="Converted Amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toTopOf="@+id/amountToConvertTxt" />
+
+    <EditText
+        android:id="@+id/amountToConvertEditTxt"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:inputType="number"
+        android:textSize="@dimen/_18ssp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:gravity="center"
+        android:hint="Amount"
+        app:layout_constraintEnd_toEndOf="@+id/amountToConvertTxt"
+        app:layout_constraintStart_toStartOf="@+id/amountToConvertTxt"
+        app:layout_constraintTop_toBottomOf="@+id/amountToConvertTxt"/>
+
+    <TextView
+        android:id="@+id/convertedAmount"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/amountToConvertEditTxt"
+        app:layout_constraintEnd_toEndOf="@+id/convertedAmountTxt"
+        app:layout_constraintStart_toStartOf="@+id/convertedAmountTxt" />
+
+    <Button
+        android:id="@+id/convert_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Convert"
+        app:layout_constraintBottom_toTopOf="@+id/info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textColor="#8A8080"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountToConvertEditTxt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
